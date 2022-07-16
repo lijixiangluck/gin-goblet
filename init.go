@@ -9,7 +9,9 @@ import (
 
 func Init() *Engine {
 	g := gin.New()
-	g.GET("/index")
+	g.GET("/index", func(c *gin.Context) {
+		c.String(http.StatusOK, "Hello World")
+	})
 	return g
 }
 
